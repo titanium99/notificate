@@ -2,6 +2,7 @@
 
 import shutil
 import notify
+import datetime
 
 def remin_hdd(drive):
     """
@@ -16,7 +17,11 @@ def remin_hdd(drive):
 
 def main():
     hdd = remin_hdd('N:\\')
-    notify.line('録画HDDの残りは{:.2f}GBです。'.format(hdd[1]))
+    today = datetiem.datetime.now()
+    if hdd[1] < 200:
+        notify.line('録画HDDの残りが少なくなりました。\nHDDを整理しましょう。残{:.2f}GBです。'.format(hdd[1]))
+    elif today.isoweekday() == 4:
+        notify.line('録画HDDの残りは{:.2f}GBです。'.format(hdd[1]))
     
 if __name__ == '__main__':
     main()
