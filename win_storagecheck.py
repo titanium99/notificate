@@ -16,7 +16,7 @@ def remin_hdd(drive):
 
 def main():
     hdd = remin_hdd('N:\\')
-    notify.line('{:.2f}'.format(hdd[0]))
+    notify.line('録画HDDの残りは{:.2f}GBです。'.format(hdd[1]))
     
 if __name__ == '__main__':
     main()
