@@ -17,7 +17,7 @@ def remin_hdd(drive):
 
 def main():
     hdd = remin_hdd('N:\\')
-    today = datetiem.datetime.now()
+    today = datetime.datetime.now()
     if hdd[1] < 200:
         notify.line('録画HDDの残りが少なくなりました。\nHDDを整理しましょう。残{:.2f}GBです。'.format(hdd[1]))
     elif today.isoweekday() == 4:
